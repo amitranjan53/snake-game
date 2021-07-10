@@ -1,6 +1,8 @@
 # snake-game
 
 This is a very simple snake game in FXGL. Hope you like it!!
+you can find the latest release package [here](https://github.com/amitranjan53/snake-game/releases/download/1.0/SnakeGame-1.0.exe)
+
 Building a project.
 
 ```
