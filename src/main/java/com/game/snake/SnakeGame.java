@@ -9,8 +9,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
-import static com.game.snake.EntityTypes.FOOD;
-import static com.game.snake.EntityTypes.SNAKE;
+import static com.game.snake.EntityTypes.*;
 
 public class SnakeGame extends GameApplication {
 
@@ -36,13 +35,13 @@ public class SnakeGame extends GameApplication {
     protected void initGame() {
         getGameScene().setBackgroundColor(Color.BLACK);
         getGameWorld().addEntityFactory(new SnakeGameFactory());
-        this.snake = spawn("snake", getAppWidth() / 2, getAppHeight() / 2 - 30);
+        this.snake = spawn("snakehead", getAppWidth() / 2, getAppHeight() / 2 - 30);
         spawn("food", FXGL.random(20, getAppWidth() - 20), FXGL.random(20, getAppHeight() - 20));
     }
 
     @Override
     protected void initPhysics() {
-        getPhysicsWorld().addCollisionHandler(new CollisionHandler(SNAKE, FOOD) {
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(SNAKEHEAD, FOOD) {
             @Override
             protected void onCollision(Entity player, Entity food) {
                 food.removeFromWorld();
