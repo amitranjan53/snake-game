@@ -9,7 +9,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
-import static com.game.snake.EntityTypes.*;
+import static com.game.snake.EntityTypes.FOOD;
+import static com.game.snake.EntityTypes.SNAKEHEAD;
 
 public class SnakeGame extends GameApplication {
 
@@ -35,8 +36,8 @@ public class SnakeGame extends GameApplication {
     protected void initGame() {
         getGameScene().setBackgroundColor(Color.BLACK);
         getGameWorld().addEntityFactory(new SnakeGameFactory());
-        this.snake = spawn("snakehead", getAppWidth() / 2, getAppHeight() / 2 - 30);
-        spawn("food", FXGL.random(20, getAppWidth() - 20), FXGL.random(20, getAppHeight() - 20));
+        this.snake = spawn("snakehead", getAppWidth() / 2.0, getAppHeight() / 2.0 - 30.0);
+        spawn("food", FXGL.random(20, getAppWidth() - 20), FXGL.random(20, getAppHeight() - 20.0));
     }
 
     @Override
@@ -56,15 +57,6 @@ public class SnakeGame extends GameApplication {
             snake.getComponent(SnakeComponent.class).grow();
         }
     }
-
-//    @Override
-//    protected void initUI() {
-//        Text textPixels = new Text();
-//        textPixels.setTranslateX(50); // x = 50
-//        textPixels.setTranslateY(100); // y = 100
-//
-//        getGameScene().addUINode(textPixels); // add to the scene graph
-//    }
 
     @Override
     protected void initSettings(GameSettings gameSettings) {

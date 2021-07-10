@@ -42,7 +42,7 @@ public class SnakeGameFactory implements EntityFactory {
     @Spawns("food")
     public Entity snakeFood(SpawnData mahiInit) {
         return entityBuilder(mahiInit).type(FOOD)
-                                      .viewWithBBox(texture(random(foodList).get(), 32, 32))
+                                      .viewWithBBox(texture(random(foodList).orElse("food10.png"), 32, 32))
                                       .with(new FoodComponent(), new CollidableComponent(true))
                                       .build();
     }
