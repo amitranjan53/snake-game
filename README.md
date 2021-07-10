@@ -4,7 +4,7 @@ This is a very simple snake game in FXGL. Hope you like it!!
 Building a project.
 
 ```
-You need a minimum of openjdk 16
+You need a minimum of openjdk 11
 run -> mvn clean install -DskipTests
 ```
 
