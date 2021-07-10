@@ -24,8 +24,8 @@ public class SnakeComponent extends Component {
     public SnakeComponent() {
 
         var imageOpen = image("snakehead.png");
-        var animIdle = new AnimationChannel(imageOpen, 2, 40 / 2, 25, Duration.millis(1), 0, 0);
-        animWalk = new AnimationChannel(imageOpen, 2, 40 / 2, 25, Duration.millis(1), 0, 1);
+        var animIdle = new AnimationChannel(imageOpen, 2, 20, 25, Duration.millis(1), 0, 0);
+        animWalk = new AnimationChannel(imageOpen, 2, 20, 25, Duration.millis(1), 0, 1);
 
         texture = new AnimatedTexture(animIdle);
     }
