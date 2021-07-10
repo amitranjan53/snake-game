@@ -2,6 +2,11 @@
 
 This is a very simple snake game in FXGL. Hope you like it!!
 
+Creating a windows package
+```
+<path to jdk bin folder>\jpackage -i ./target/ --input ./target/ --main-class com.game.snake.SnakeGame --main-jar snake-game.jar --win-dir-chooser  --app-version 1.0 --copyright "The Unlicense"
+```
+
 Game Start
 ![Game Start](gamestart.png)
 
